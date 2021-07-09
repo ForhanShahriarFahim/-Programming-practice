@@ -73,6 +73,22 @@ void c_p_c()
 #endif
 }
 
+int waysCoinChange(int arr[], int n, int value)
+{
+    int dp[value+1];
+    memset(dp,0,sizeof(dp));
+    dp[0] = 1;
+
+    for(int i = 0;i<n;i++)
+    {
+        for(int j = arr[i];j<=value;j++)
+        {
+            dp[j]+=dp[j - arr[i]];
+        }
+    }
+    return dp[value];
+
+}
 
 
 void solve()
@@ -84,6 +100,8 @@ void solve()
     {
         cin>>arr[i];
     }
+    int value = 4;
+    cout<<waysCoinChange(arr,n,value)<<endl;
     
 }
 
