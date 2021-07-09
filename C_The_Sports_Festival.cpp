@@ -1,0 +1,72 @@
+//Dp problem
+#include <bits/stdc++.h>
+using namespace std;
+
+//**************************************************************************************************************************************************************************
+typedef long long ll;
+typedef long double ld;
+typedef unsigned long long ull;
+//**************************************************************************************************************************************************************************
+typedef pair<int, int> pii;
+typedef pair<ll, ll> pll;
+typedef vector<int> vi;
+typedef vector<ll> vl;
+#define mp make_pair
+#define pb push_back
+#define fi first
+#define se second
+#define mod 1000000007
+#define pi acos(-1.0)
+#define eps 1e-9
+#define inf 1e18
+#define sz(x) (int)((x).size())
+#define gcd(a, b) __gcd(a, b)
+#define LCM(x, y) (((x) / __gcd((x), (y))) * (y))
+#define mem(x, n) memset(x, n, sizeof(x))
+#define setbits(x) __builtin_popcountll(x)
+#define zrobits(x) __builtin_ctzll(x)
+#define ps(x, y) fixed << setprecision(y) << x
+#define FastIO ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+//**************************************************************************************************************************************************************************
+
+void c_p_c()
+{
+#ifndef ONLINE_JUDGE
+   freopen("input.txt", "r", stdin);
+   freopen("output.txt", "w", stdout);
+#endif   
+}
+ll dp[2001][2001];
+int main(int argc, char const *argv[])
+{
+    c_p_c();    
+    FastIO;
+    ll n;
+    cin>>n;
+    ll arr[n+1]={0};
+    for(int i=1;i<=n;i++)
+    {
+        cin>>arr[i];
+    }
+    sort(arr+1,arr+n+1);
+    
+    for(int i=1;i<=n;i++) dp[i][i] = 0;
+    for(int i=2;i<=n;i++)
+    {
+        for(int j=1;j<=n-i+1;j++)
+        {
+            dp[j][j+i-1] = arr[j+i-1]-arr[j] + min(dp[j+1][j+i-1], dp[j][j+i-2]);
+         //   cout << "i :" << i << " j: " << j << " value: " << dp[j][j+i-1] << " ";
+        }
+    }
+/*     //for(int i=1;i<=n;i++)
+   // {
+     //   for(int j=1;j<=n;j++)
+       // {
+            
+      //  }
+        cout<<endl;
+    //} */
+    cout<<dp[1][n]<<endl;
+}
+

@@ -1,0 +1,54 @@
+#include <bits/stdc++.h>
+/* #define IOS                  \
+    ios::sync_with_stdio(0); \
+    cin.tie(0);              \
+    cout.tie(0); */
+using namespace std;
+int main()
+{
+    //IOS;
+    long long int test = 1, t = 1;
+    cin >> test;
+    while (test--)
+    {
+        long long int i, n, h, l, mov = 0;
+        long long int sum = 0;
+        bool val = 0;
+        cin >> n;
+        int a[n];
+        for (i = 0; i < n; i++)
+        {
+            cin >> a[i];
+            if (a[i] > 0)
+                sum += a[i];
+        }
+        for (i = 0; i < n; i++)
+        {
+            if (a[i] > 0)
+            {
+                l = i;
+                break;
+            }
+        }
+        for (i = n - 1; i >= 0; i--)
+        {
+            if (a[i] > 0)
+            {
+                h = i;
+                break;
+            }
+        }
+        for (i = l; i <= h; i++)
+        {
+            if (a[i] == 0)
+                continue;
+            if (val == 1 && a[i] < 0)
+                mov++;
+            if (a[i] > 0)
+                val = 1;
+            if (a[i] < 0)
+                val = 0;
+        }
+        printf("Case %lld: %lld %lld\n", t++, sum, mov);
+    }
+}

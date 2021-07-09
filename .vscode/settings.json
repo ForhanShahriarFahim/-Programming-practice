@@ -1,0 +1,14 @@
+{
+    "C_Cpp.errorSquiggles": "Disabled",
+    "competitive-programming-helper.firstTime": false,
+    "cSpell.ignoreWords": [
+        "builtin",
+        "popcountll"
+    ],
+    "files.associations": {
+        "sstream": "cpp",
+        "regex": "cpp",
+        "iostream": "cpp",
+        "ostream": "cpp"
+    }
+}
