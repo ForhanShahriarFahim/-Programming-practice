@@ -36,23 +36,39 @@ void c_p_c()
 #endif   
 }
 
-vector<int> adj(10);
+vector<int> adj[10];
+int nodes, edges, x, y;
+void print_graph()
+{
+    cout<<endl;
+    for(int i = 1;i<=nodes;i++)
+    {
+        cout << "Adjacency list of node " << i << ": ";
+        for(auto p:adj[i])
+        {
+            cout<<"->"<<p<<" ";
+        }
+        cout<<endl;
+    }
+    
+    
+}
+
 int main(int argc, char const *argv[])
 {
-    c_p_c();    
+    //c_p_c();    
     FastIO;
-    int nodes,edges,x,y;
+    
     cin>>nodes>>edges;
     for(int i=0;i<edges;i++)
     {
+        cout<<"enter the edges"<<" ";
         cin>>x>>y;
         adj[x].pb(y);
+        adj[y].pb(x);
     }
-    for(int i=1;i<=nodes;i++)
-    {
-        cout<<"Adjacency list of node "<<i<<": ";
-        for(int j=1;j<)
-    }
+    
+    print_graph();
 
 }
 

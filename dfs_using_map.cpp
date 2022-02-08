@@ -2,14 +2,14 @@
 using namespace std;
 
 //**************************************************************************************************************************************************************************
-typedef long long ll;
+typedef long long ll;workbench.action.files.newUntitledFile
 typedef long double ld;
 typedef unsigned long long ull;
 //**************************************************************************************************************************************************************************
 typedef pair<int, int> pii;
 typedef pair<ll, ll> pll;
 typedef vector<int> vi;
-typedef vector<ll> vl;
+typedef vector<ll> vl;?
 #define mp make_pair
 #define pb push_back
 #define fi first
